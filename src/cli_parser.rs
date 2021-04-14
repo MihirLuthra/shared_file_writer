@@ -14,6 +14,10 @@ pub(crate) struct Opt {
     /// Delay in releasing lock. (in secs)
     #[structopt(short, long, parse(try_from_str = parse_seconds), default_value = "0.5")]
     pub seconds: Duration,
+
+    /// Message by each thread
+    #[structopt(short, long, default_value = "Hello shared file.")]
+    pub message: String,
 }
 
 /// [`structopt::StructOpt`] needs a type to implement [`std::str::FromStr`] trait
